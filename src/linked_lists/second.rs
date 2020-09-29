@@ -2,7 +2,6 @@
 
 use std::mem;
 
-
 pub struct List<T> {
     head: Link<T>,
 }
@@ -43,8 +42,8 @@ impl<T> List<T> {
     }
 
     pub fn peek(&self) -> Option<&T> {
-        self.head.map(|node| {
-
+        self.head.as_ref().map(|node| {
+            &node.elem
         })
     }
 }
